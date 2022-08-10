@@ -1,3 +1,20 @@
+# Ignore common libraries that are copied to app/service folders
+*_app/TCPClient.py
+*_app/TCPServer.py
+*_app/UDPClient.py
+*_app/BaseApp.py
+*_app/ConfigLoader.py
+*_app/Arduino.py
+*_service/TCPClient.py
+*_service/TCPServer.py
+*_service/UDPClient.py
+*_service/BaseApp.py
+*_service/ConfigLoader.py
+*_service/Arduino.py
+common/config.proto
+*/config_pb2.py
+*/message_pb2.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
