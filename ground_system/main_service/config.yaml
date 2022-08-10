@@ -1,0 +1,21 @@
+---
+  version: "v0.1"
+  virtual_machine: false  # Is the system running in a vm?
+
+  command_multicast_ip: "224.1.1.30"
+  command_multicast_port: 5051
+  telemetry_multicast_ip: "224.1.1.40"
+  telemetry_multicast_port: 5061
+
+  # ---- sdr_app ----
+  emulate_sdr: true       # Should the SDR be emulated (i.e. SDR hardware not present)
+  sdr_tcp_server_ip: "127.0.0.1"
+  sdr_tcp_server_port: 5005
+
+  # ---- hal_service ----
+
+  # ---- cloud_service ----
+  connect_to_command_database: true  # Setting this to false enables local testing
+  command_database_name: "Ground_to_Spacecraft_Temporary_Queue"
+  connect_to_telemetry_database: false  # Setting this to false enables local testing
+  telemetry_database_name: "Spacecraft_Telemetry_to_Ground"

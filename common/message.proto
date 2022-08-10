@@ -1,0 +1,68 @@
+syntax = "proto2";
+
+package InSECTS;
+
+import "config.proto";
+
+// Every message should be wrapped in the Message type or it wont send/receive
+message Message {
+    optional string destination = 1;
+    optional string sender = 2;
+
+    optional bool ack = 3;
+    optional bool disconnect = 4;
+
+    optional Command command = 5;
+    optional Telemetry telemetry = 6;
+
+    optional ConfigParams config_params = 7;
+    optional bool request_config = 8;
+}
+
+//---------------------------------------------
+//          Command Messages Here
+//---------------------------------------------
+message Command {
+    optional SetServoPosition set_servo_position = 1;
+    optional SetFanSpeed set_fan_speed = 2;
+    optional SetFanState set_fan_state = 3;
+    optional SetAutonomyState set_autonomy_state = 4;
+}
+
+message SetServoPosition {
+    optional int32 servo_pos = 1;
+}
+
+message SetFanSpeed {
+    optional int32 fan_speed = 1;
+}
+
+message SetFanState {
+    optional bool fan_state = 1;
+}
+
+message SetAutonomyState {
+    optional bool autonomy_state = 1;
+}
+
+//---------------------------------------------
+//          Telemetry Messages Here
+//---------------------------------------------
+message Telemetry {
+    optional TemperatureData temperature_data = 1;
+    optional FanSpeedData fan_speed_reading = 2;
+}
+
+message TemperatureData {
+    optional int32 sensor_id = 1;
+    optional double sensor_value = 2;
+}
+
+message FanSpeedData {
+    optional int32 fan_id = 1;
+    optional double fan_speed = 2;
+}
+
+//---------------------------------------------
+//          Infrastructure Messages Here
+//---------------------------------------------

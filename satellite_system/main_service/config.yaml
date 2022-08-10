@@ -1,0 +1,21 @@
+---
+  version: "v0.1"
+  virtual_machine: false  # Is the system running in a vm?
+  emulate_sdr: true       # Should the SDR be emulated (i.e. SDR not present)
+  emulate_arduino: false  # Should the arduino be emulated (i.e. arduino not present)
+  emulate_thermal: false  # Should the thermal system be emulated
+  telemetry_freq: 0.20     # Hz (always keep to two decimal places e.g. #.##)
+
+  command_multicast_ip: "224.1.1.10"
+  command_multicast_port: 5050
+  telemetry_multicast_ip: "224.1.1.20"
+  telemetry_multicast_port: 5060
+
+  # ---- sdr_app ----
+  sdr_tcp_client_ip: "127.0.0.1"
+  sdr_tcp_client_port: 5005
+
+  # ---- hal_service ----
+  arduino_address: "/dev/ttyACM0"
+  serial_baudrate: 115200
+
