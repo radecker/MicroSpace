@@ -26,7 +26,7 @@ def tail(file):
 
 
 if __name__=="__main__":
-    config_fp = "/home/jhu-ep/InSECTS-Ground-System/main_service/config.yaml"
+    config_fp = "/home/admin/MicroSpaceFALL2022/ground_system/main_service/config.yaml"
     cl = ConfigLoader.ConfigLoader(config_path=config_fp)
     data = cl.read_config()
 
