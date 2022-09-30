@@ -10,8 +10,8 @@ import config_pb2
 import time
 import subprocess
 
-STARTUP_IP = "224.1.1.95"
-STARTUP_PORT = 5095
+STARTUP_IP = "224.1.1.90"
+STARTUP_PORT = 5090
 
 
 def ConvertConfigDictToProto(config: dict) -> message_pb2.Message:

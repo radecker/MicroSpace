@@ -6,8 +6,8 @@ echo "[hal_service] Building..."
 
 # Copy in the latest protobuf messages 
 echo "[hal_service] Copying dependencies..."
-cp ../../common/message_pb2.py .
-cp ../../common/config_pb2.py .
+cp ../main_service/message_pb2.py .
+cp ../main_service/config_pb2.py .
 cp ../../common/BaseApp.py .
 cp ../../common/Arduino.py .
 cp ../../common/TCPClient.py .
