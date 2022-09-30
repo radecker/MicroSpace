@@ -10,7 +10,8 @@ import config_pb2
 import time
 import subprocess
 
-STARTUP_IP = "224.1.1.90"
+# STARTUP_IP = "224.1.1.90"
+STARTUP_IP = "224.1.1.1"
 STARTUP_PORT = 5090
 
 
@@ -43,14 +44,14 @@ if __name__ == "__main__":
     udp_client.add_listener(group=STARTUP_IP, port=STARTUP_PORT)
 
     # Test of sending messages to the arduino from ground station
-    # msg = message_pb2.Message()
-    # cmd = message_pb2.Command()
-    # sp = message_pb2.SetServoPosition()
-    # sp.servo_pos = 100.0
-    # cmd.set_servo_position.CopyFrom(sp)
-    # msg.command.CopyFrom(cmd)
-    # udp_client.add_sender(group=configs["command_multicast_ip"], port=configs["command_multicast_port"])
-    # udp_client.send(msg, group=configs["command_multicast_ip"], port=configs["command_multicast_port"])
+    msg = message_pb2.Message()
+    cmd = message_pb2.Command()
+    sp = message_pb2.SetServoPosition()
+    sp.servo_pos = 100.0
+    cmd.set_servo_position.CopyFrom(sp)
+    msg.command.CopyFrom(cmd)
+    udp_client.add_sender(group=configs["command_multicast_ip"], port=configs["command_multicast_port"])
+    udp_client.send(msg, group=configs["command_multicast_ip"], port=configs["command_multicast_port"])
 
     while True:
         msgs = udp_client.get_messages()

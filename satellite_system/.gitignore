@@ -11,7 +11,8 @@
 *_service/BaseApp.py
 *_service/ConfigLoader.py
 *_service/Arduino.py
-*/config.proto
+*_service/config.proto
+*_service/message.proto
 */config_pb2.py
 */message_pb2.py
 
